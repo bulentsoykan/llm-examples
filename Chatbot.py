@@ -14,6 +14,24 @@ with st.sidebar:
 
 st.title("Learn Simulation with ChatGPT")
 # st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
+
+# radio
+st.subheader("Select a topic to learn")
+topic = st.radio(
+    "",
+    (
+        "Input analysis",
+        "Simulation model building",
+        "Output analysis",
+        "Verification and validation",
+        "Design of simulation experiments",
+    ),
+)
+
+# slide bar for temperature
+st.subheader("Select a temperature")
+temperature = st.slider("", 0.0, 1.0, 0.5, 0.1)
+
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
         {"role": "assistant", "content": "How can I help you?"}
